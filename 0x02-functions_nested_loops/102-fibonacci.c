@@ -1,28 +1,26 @@
 #include <stdio.h>
 
 /**
- * main - Prints the add of the even-valued
- * fibonacci numbers.
+ * main - prints the first 50 Fibonacci numbers
  *
- * Return: Always 0.
+ * Return: Always 0
  */
 int main(void)
 {
-	long int n1, n2, fn, afn;
+    int i;
+    long fib1 = 1, fib2 = 2, fib;
 
-	n1 = 1;
-	n2 = 2;
-	fn = afn = 0;
-	while (fn <= 4000000)
-	{
-		fn = n1 + n2;
-		n1 = n2;
-		n2 = fn;
-		if ((n1 % 2) == 0)
-		{
-			afn += n1;
-		}
-	}
-	printf("%ld\n", afn);
-	return (0);
+    printf("%ld, %ld", fib1, fib2);
+
+    for (i = 3; i <= 50; i++)
+    {
+        fib = fib1 + fib2;
+        printf(", %ld", fib);
+        fib1 = fib2;
+        fib2 = fib;
+    }
+
+    printf("\n");
+
+    return 0;
 }
